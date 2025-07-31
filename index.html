@@ -390,15 +390,27 @@ window.addEventListener("scroll", function () {
   });
 
   // 下2つのcorner-textのみ非表示
-  // const bottomLeft = document.querySelector(".corner-text.bottom-left");
-  // const bottomRight = document.querySelector(".corner-text.bottom-right");
 
-  const cornertexts = document.querySelectorAll(".corner-text");
+  const bottomLeft = document.querySelector(".corner-text.bottom-left");
+  const bottomRight = document.querySelector(".corner-text.bottom-right");
+  const topLeft = document.querySelector(".corner-text.top-left");
+  const topRight = document.querySelector(".corner-text.top-right");
   if (scrollY > 80) {
-    cornertexts.forEach(el=> el.style.display = "none");
+    bottomLeft.style.display = "none";
+    bottomRight.style.display = "none";
   } else {
-    cornertexts.forEach(el=> el.style.display = "block");
+    bottomLeft.style.display = "block";
+    bottomRight.style.display = "block";
   }
+
+    if (scrollY > 200) {
+    topLeft.style.display = "none";
+    topRight.style.display = "none";
+  } else {
+    topLeft.style.display = "block";
+    topRight.style.display = "block";
+  }
+
 });
 
   </script>
